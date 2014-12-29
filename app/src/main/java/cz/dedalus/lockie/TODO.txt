@@ -1,0 +1,2 @@
+- seznam wifi siti jako ListView
+- zmena PIN se musi potvrdit predchozim pinem
