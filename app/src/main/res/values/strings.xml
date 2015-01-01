@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Lockie</string>
-    <string name="device_admin_label">Lockie admin label</string>
-    <string name="device_admin_description">Lockie admin description</string>
+    <string name="device_admin_label">Lockie</string>
+    <string name="device_admin_description">Lockie needs access to your PIN lock settings</string>
     <string name="connected_to">Connected to</string>
     <string name="disabled_screen_lock">screen lock disabled</string>
     <string name="enabled_screen_lock">Screen lock enabled</string>
     <string name="could_not_change_lock">Couldn\'t change lock settings!</string>
     <string name="pin_field_title">Your PIN</string>
+    <string name="confirm_pin_field_title">Confirm new PIN</string>
+    <string name="old_pin_field_title">Your current PIN</string>
     <string name="ssids_field_title">No PIN if connected to these WIFI networks</string>
     <string name="save">Save</string>
+    <string name="pin_cannot_be_empty">PIN cannot be empty</string>
+    <string name="pin_does_not_match_confirmation">PIN doesn\'t match confirmation</string>
+    <string name="old_pin_incorrect">Old PIN is incorrect</string>
     <string name="configuration_saved">Configuration saved!</string>
 </resources>

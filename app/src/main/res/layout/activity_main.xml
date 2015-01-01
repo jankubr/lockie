@@ -10,9 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pin_field_title"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:textSize="20dp" />
+        android:id="@+id/pinTextView"
+        android:textSize="20sp"
+        android:layout_alignBottom="@+id/pinEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -23,17 +25,75 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
+        android:layout_alignLeft="@+id/button"
+        android:layout_alignStart="@+id/button" />
+
+    <RelativeLayout
+        android:id="@+id/confirmPinFields"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/pinEditText"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_pin_field_title"
+            android:id="@+id/confirmPinTextView"
+            android:textSize="20sp"
+            android:layout_alignBottom="@+id/confirmPinEditText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/confirmPinEditText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/confirmPinTextView"
+            android:layout_toEndOf="@+id/confirmPinTextView"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/oldPinFields"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/confirmPinFields"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/old_pin_field_title"
+            android:id="@+id/oldPinTextView"
+            android:textSize="20sp"
+            android:layout_alignBottom="@+id/oldPinEditText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:ems="10"
+            android:id="@+id/oldPinEditText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ssids_field_title"
-        android:id="@+id/textView2"
-        android:layout_toLeftOf="@+id/ssids"
-        android:textSize="20dp"
-        android:layout_alignTop="@+id/ssids" />
+        android:id="@+id/ssidsTextView"
+        android:textSize="20sp"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/oldPinFields"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -42,10 +102,9 @@
         android:ems="10"
         android:id="@+id/ssids"
         android:lines="5"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/pinEditText"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/ssidsTextView"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
