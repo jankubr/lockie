@@ -10,7 +10,7 @@
     <string name="pin_field_title">Your PIN</string>
     <string name="confirm_pin_field_title">Confirm PIN</string>
     <string name="old_pin_field_title">Current PIN</string>
-    <string name="ssids_field_title">No PIN if connected to these Wi-Fi networks</string>
+    <string name="ssids_field_title">No PIN if connected to these Wi-Fi</string>
     <string name="save">Save</string>
     <string name="add_current_wifi">Add current Wi-Fi</string>
     <string name="pin_cannot_be_empty">PIN cannot be empty</string>
