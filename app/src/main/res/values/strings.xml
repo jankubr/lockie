@@ -8,8 +8,8 @@
     <string name="enabled_screen_lock">Screen lock enabled</string>
     <string name="could_not_change_lock">Couldn\'t change lock settings!</string>
     <string name="pin_field_title">Your PIN</string>
-    <string name="confirm_pin_field_title">Confirm new PIN</string>
-    <string name="old_pin_field_title">Your current PIN</string>
+    <string name="confirm_pin_field_title">Confirm PIN</string>
+    <string name="old_pin_field_title">Current PIN</string>
     <string name="ssids_field_title">No PIN if connected to these WIFI networks</string>
     <string name="save">Save</string>
     <string name="pin_cannot_be_empty">PIN cannot be empty</string>

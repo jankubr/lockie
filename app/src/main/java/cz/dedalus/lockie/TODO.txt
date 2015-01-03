@@ -1,1 +1,2 @@
 - seznam wifi siti jako ListView?
+- moznost pridat aktualne pripojenou wifi
