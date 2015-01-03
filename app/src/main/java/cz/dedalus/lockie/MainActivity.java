@@ -5,13 +5,18 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.HashSet;
 
@@ -23,8 +28,8 @@ public class MainActivity extends ActionBarActivity {
     final static String PIN_PREFERENCES_KEY = "PIN";
     EditText pinEditText;
     EditText ssidsEditText;
-    RelativeLayout confirmPinFieldsLayout;
-    RelativeLayout oldPinFieldsLayout;
+    LinearLayout confirmPinFieldsLayout;
+    LinearLayout oldPinFieldsLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +58,27 @@ public class MainActivity extends ActionBarActivity {
         hideExtraPinFields();
     }
 
+    public void addCurrentWifi(View v) {
+
+        ConnectivityManager connManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        if (networkInfo.isConnected()) {
+
+            WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+            WifiInfo wifiInfo = wifiManager.getConnectionInfo();
+            String ssid = wifiInfo.getSSID().replace("\"", "");
+            String ssids = ssidsEditText.getText().toString();
+            if (ssids.isEmpty()) {
+                ssids = ssid;
+            } else {
+                ssids += "\n" + ssid;
+            }
+            ssidsEditText.setText(ssids);
+        } else {
+            Toast.makeText(this, getString(R.string.not_connected_to_wifi), Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void fillPin() {
         pinEditText = (EditText) findViewById(R.id.pinEditText);
         pinEditText.setText(getPreferences().getString(PIN_PREFERENCES_KEY, null));
@@ -70,8 +96,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void setUpExtraPinFieldsToggler() {
-        confirmPinFieldsLayout = (RelativeLayout) findViewById(R.id.confirmPinFields);
-        oldPinFieldsLayout = (RelativeLayout) findViewById(R.id.oldPinFields);
+        confirmPinFieldsLayout = (LinearLayout) findViewById(R.id.confirmPinFields);
+        oldPinFieldsLayout = (LinearLayout) findViewById(R.id.oldPinFields);
         pinEditText.addTextChangedListener(new TextWatcher(){
             public void afterTextChanged(Editable s) {
                 String currentPin = getPinFromPreferences();
