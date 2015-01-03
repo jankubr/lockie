@@ -69,7 +69,6 @@
             android:id="@+id/oldPinTextView"
             android:textSize="20sp"
             android:layout_weight=".5"
-            android:elegantTextHeight="false"
             android:paddingTop="5dp" />
 
         <EditText
